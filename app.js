@@ -13,7 +13,7 @@ app.use('/api/users', userRoute);
 const db_path = 'mongodb://localhost/insureapp';
 
 mongoose.connect(db_path, { useNewUrlParser: true });
-const port = 8080;
+const port = 5000;
 app.listen(port, function () {
     console.log('CORS-enabled web server listening on port ' + port)
 })
