@@ -10,7 +10,7 @@ var userRoute = require('./Routes/usersRoutes.js');
 app.use(bodyparser.json());
 app.use('/api/users', userRoute);
 
-const db_path = 'mongodb://localhost/insureapp';
+const db_path = 'mongodb://3.16.89.86/insureapp';
 
 mongoose.connect(db_path, { useNewUrlParser: true });
 const port = 5000;
