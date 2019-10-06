@@ -13,7 +13,27 @@ var clientController = function(){
         }else {
             res.status(400).send({err: 'Missing parameters'});
         }
-    }
+	}
+	
+	function removeClient(req,res){
+		if( req.body.username && req.body.password ){
+			console.log('get from db: ',req.body.username , req.body.password );
+			Client.findOne({username: req.body.username, password: req.body.password}, function(err, user){
+				console.log(err);
+				console.log(user);
+				if(! user){
+					res.status(401).send();
+				}else{
+					user.remove();
+					res.status(200).send("delete");
+				}
+			});
+		}else {
+			res.status(400).send();
+		}
+
+
+	}
 
     
 	function loginClient(req, res) {
@@ -53,7 +73,8 @@ var clientController = function(){
     return {
         addClient: addNewClient,
         loginClient: loginClient,
-        getUserObj: getUserObj
+		getUserObj: getUserObj,
+		deleteClient: removeClient 
     }
 }
 

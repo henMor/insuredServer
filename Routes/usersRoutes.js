@@ -8,10 +8,8 @@ var userRoutes = function () {
     route.post('/addClient', clientController.addClient)
     route.post('/loginClient', clientController.loginClient)
     
-
-    route.delete('/removeUser', function(req, res){
-
-    })
+    route.delete('/removeUser',clientController.deleteClient)
+    
 
     route.get('/allUsers', function(req, res){
 
