@@ -74,7 +74,7 @@ var clientController = function(){
         addClient: addNewClient,
         loginClient: loginClient,
 		getUserObj: getUserObj,
-		deleteClient: removeClient 
+		removeClient: removeClient 
     }
 }
 
