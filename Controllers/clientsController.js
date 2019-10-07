@@ -16,9 +16,9 @@ var clientController = function(){
 	}
 	
 	function removeClient(req,res){
-		if( req.body.username && req.body.password ){
-			console.log('get from db: ',req.body.username , req.body.password );
-			Client.findOne({username: req.body.username, password: req.body.password}, function(err, user){
+		if( req.body.username){
+			console.log('get from db: ',req.body.username);
+			Client.findOne({username: req.body.username}, function(err, user){
 				console.log(err);
 				console.log(user);
 				if(! user){
