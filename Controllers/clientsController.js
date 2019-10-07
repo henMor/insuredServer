@@ -23,6 +23,7 @@ var clientController = function(){
 				console.log(user);
 				if(! user){
 					res.status(401).send();
+
 				}else{
 					user.remove();
 					res.status(200).send("delete");
@@ -31,8 +32,6 @@ var clientController = function(){
 		}else {
 			res.status(400).send();
 		}
-
-
 	}
 
     

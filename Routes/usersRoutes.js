@@ -5,10 +5,9 @@ var userRoutes = function () {
 
     var route = express.Router();
 
-    route.post('/addClient', clientController.addClient)
-    route.post('/loginClient', clientController.loginClient)
-    
-    route.delete('/removeClient',clientController.removeClient)
+    route.post('/addClient', clientController.addClient);
+    route.post('/loginClient', clientController.loginClient); 
+    route.post('/removeClient',clientController.removeClient);
     
 
     route.get('/allUsers', function(req, res){
