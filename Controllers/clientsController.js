@@ -18,7 +18,8 @@ var clientController = function(){
 	function removeClient(req,res){
 		if( req.body.username){
 			console.log('get from db: ',req.body.username);
-			Client.findOne({username: req.body.username}, function(err, user){
+	 
+			Client.remove({username: req.body.username}, function(err, user){
 				console.log(err);
 				console.log(user);
 				if(! user){
@@ -26,7 +27,7 @@ var clientController = function(){
 
 				}else{
 			//		user.remove();
-					console.log("delete")
+					console.log('deleted')
 					res.status(200).send();
 				}
 			});
