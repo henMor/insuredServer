@@ -22,7 +22,7 @@ var clientController = function(){
 				console.log(err);
 				console.log(user);
 				if(! user){
-					res.status(401).send();
+					res.status(401).send("my-error");
 
 				}else{
 					user.remove();
