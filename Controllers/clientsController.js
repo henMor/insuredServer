@@ -14,6 +14,26 @@ var clientController = function(){
             res.status(400).send({err: 'Missing parameters'});
         }
 	}
+
+
+	
+	function showAllUsers(){
+
+		var resultArray = [];
+
+	var cursor = Client.collection('clients').find();
+	
+		cursor.forEach(function(doc, err){
+			assert.equal(null, err);
+			resultArray.push(doc);
+		  }, function(){
+			Client.close();
+			res.render('index', {items: resultArray});
+		});
+			
+		}
+	
+
 	
 	function removeClient(req,res){
 		if( req.body.username){
@@ -75,7 +95,8 @@ var clientController = function(){
         addClient: addNewClient,
         loginClient: loginClient,
 		getUserObj: getUserObj,
-		removeClient: removeClient 
+		removeClient: removeClient,
+		showAllUsers: showAllUsers 
     }
 }
 

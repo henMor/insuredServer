@@ -10,9 +10,7 @@ var userRoutes = function () {
     route.post('/removeClient',clientController.removeClient);
     
 
-    route.get('/allUsers', function(req, res){
-
-    })
+    route.get('/ShowAllUsers', clientController.showAllUser );
 
 
 
