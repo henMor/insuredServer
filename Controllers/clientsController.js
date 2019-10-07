@@ -22,11 +22,12 @@ var clientController = function(){
 				console.log(err);
 				console.log(user);
 				if(! user){
-					res.status(401).send("my-error");
+					res.status(401).send();
 
 				}else{
-					user.remove();
-					res.status(200).send("delete");
+			//		user.remove();
+					console.log("delete")
+					res.status(200).send();
 				}
 			});
 		}else {
